@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos Entrelaçados - Afro Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <button type="button" onclick="abrirAdmin()" class="btn-admin-nav">⚙️ Admin</button>
+    </nav>
+
+    <header id="home">
+        <img src="banner.jpg" alt="Banner" class="banner-principal">
+    </header>
+
+    <section class="container">
+        <h2 class="titulo-secao">Nossas Tranças</h2>
+        <div id="lista-servicos" class="grid-servicos"></div>
+    </section>
+
+    <section class="container bg-escuro">
+        <h2 class="titulo-secao">Solicitar Orçamento</h2>
+        <form id="formOrcamento" class="form-style">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="tel" id="whatsapp" placeholder="Seu Contato" required>
+            <select id="tipoTranca">
+                <option value="Box Braids">Box Braids</option>
+                <option value="Knotless">Knotless</option>
+                <option value="Nagô">Nagô</option>
+                <option value="Outro">Outro modelo</option>
+            </select>
+            <textarea id="mensagem" placeholder="Detalhes do pedido..."></textarea>
+            <button type="submit" class="btn-send">Enviar para WhatsApp</button>
+        </form>
+    </section>
+
+    <div id="modalAdmin" class="modal">
+        <div class="modal-content">
+            <span onclick="fecharAdmin()" class="close">&times;</span>
+            <h3>Acesso Restrito</h3>
+            <div id="loginAdmin">
+                <p>Digite a senha para gerenciar:</p>
+                <input type="password" id="senhaAdmin" placeholder="Senha" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #7a4a2e; border-radius: 5px;">
+                <button onclick="verificarSenha()" style="width: 100%; padding: 12px; background: #7a4a2e; color: white; border: none; border-radius: 5px;">Entrar</button>
+            </div>
+            <div id="areaGerenciamento" style="display:none;">
+                <h4>Painel Admin</h4>
+                <input type="text" id="novoNome" placeholder="Nome da Trança" style="width: 100%; margin-bottom: 10px; padding: 10px;">
+                <input type="text" id="novoPreco" placeholder="Preço (ex: R$ 150)" style="width: 100%; margin-bottom: 10px; padding: 10px;">
+                
+                <label style="display:block; margin-bottom: 5px;">Escolher Foto da Galeria:</label>
+                <input type="file" id="novaImg" accept="image/*" style="width: 100%; margin-bottom: 15px; background: #333; color: #fff; padding: 5px;">
+                
+                <button onclick="adicionarServico()" style="width: 100%; background: #28a745; color: white; border: none; padding: 12px; border-radius: 5px; font-weight: bold;">Salvar Trança</button>
+                <hr style="margin: 20px 0; border: 0.5px solid #444;">
+                <div id="listaEdicao"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
