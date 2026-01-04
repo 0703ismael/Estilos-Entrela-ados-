@@ -48,6 +48,22 @@ renderizar();
 
 function renderizar() {
     const lista = document.getElementById('lista-servicos');
+    if(!lista) return;
+    lista.innerHTML = '';
+    servicos.forEach((s) => {
+        lista.innerHTML += `
+            <div class="card">
+                <img src="${s.img}">
+                <h3>${s.nome}</h3>
+                <p>${s.preco}</p>
+            </div>`;
+    });
+}
+renderizar();
+
+
+function renderizar() {
+    const lista = document.getElementById('lista-servicos');
     const listaEdicao = document.getElementById('listaEdicao');
     if(!lista) return;
     
