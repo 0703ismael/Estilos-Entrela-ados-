@@ -1,21 +1,34 @@
 let servicos = [
-    { nome: "Nagô Masculina", preco: "60 $", img: "nago1.jpg" },
-    { nome: "Nagô Masculina Simples", preco: "50 $", img: "nago2.jpg" },
-    { nome: "Nagô Masculina Desenho", preco: "80 $", img: "nago3.jpg" },
-    { nome: "Nagô Feminina 1", preco: "35 $", img: "nago_fem1.jpg" },
-    { nome: "Nagô Feminina 2", preco: "25 $", img: "nago_fem2.jpg" },
-    { nome: "Trança Nagô Lateral", preco: "25 $", img: "nago_lateral.jpg" },
-    { nome: "Box Braids", preco: "280 $", img: "box_braids.jpg" },
-    { nome: "Box Braids Jumbo", preco: "190 $", img: "box_jumbo.jpg" },
-    { nome: "Boho Braids", preco: "280 $", img: "boho.jpg" },
-    { nome: "Gypsy Braids", preco: "380 $", img: "gypsy.jpg" },
-    { nome: "Fulani Braids", preco: "280 $", img: "fulani.jpg" },
-    { nome: "Fulani Braids Curta", preco: "200 $", img: "fulani_curta.jpg" },
-    { nome: "Twist Masculina", preco: "180 $", img: "twist_masc.jpg" },
-    { nome: "Curl Twist", preco: "180 $", img: "curl_twist.jpg" },
-    { nome: "Twist Feminina", preco: "250 $", img: "twist_fem.jpg" },
-    { nome: "Twist Feminina Desenho", preco: "200 $", img: "twist_fem_topo.jpg" }
+    { nome: "Nagô Masculina", preco: "60 $", img: "Nagô Masculina.jpg" },
+    { nome: "Nagô Masculina Simples", preco: "50 $", img: "Nagô Masculina simples.jpg" },
+    { nome: "Nagô Masculina Desenho", preco: "80 $", img: "Nagô Masculina Desenho.jpg" },
+    { nome: "Nagô Feminina 1", preco: "35 $", img: "Nago feminina 1.jpg" },
+    { nome: "Trança Nagô Lateral", preco: "25 $", img: "Trança Nagô Lateral.jpg" },
+    { nome: "Box Braids", preco: "280 $", img: "Box braids.jpg" },
+    { nome: "Box Braids Jumbo", preco: "190 $", img: "Box braids jumbo.jpg" },
+    { nome: "Boho Braids", preco: "280 $", img: "Boho Braids.jpg" },
+    { nome: "Gypsy Braids", preco: "380 $", img: "Gypsy Braids.jpg" },
+    { nome: "Fulani Braids", preco: "280 $", img: "Fulani Braids.jpg" },
+    { nome: "Fulani Braids Curta", preco: "200 $", img: "Fulani Braids Curta.jpg" },
+    { nome: "Twist Feminina", preco: "250 $", img: "Twist Feminina.jpg" },
+    { nome: "Twist Feminina Desenho", preco: "200 $", img: "Twist Feminina Desenho.jpg" }
 ];
+
+function renderizar() {
+    const lista = document.getElementById('lista-servicos');
+    if(!lista) return;
+    lista.innerHTML = '';
+    servicos.forEach((s) => {
+        lista.innerHTML += `
+            <div class="card">
+                <img src="${s.img}">
+                <h3>${s.nome}</h3>
+                <p>${s.preco}</p>
+            </div>`;
+    });
+}
+renderizar();
+
 
 function renderizar() {
     const lista = document.getElementById('lista-servicos');
